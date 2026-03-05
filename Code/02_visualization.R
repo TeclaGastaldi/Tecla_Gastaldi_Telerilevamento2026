@@ -61,6 +61,21 @@ plot(b4,col=rocket(100))
 cl.2<- colorRampPalette(c("slateblue","mediumorchid2","lightpink"))(100)
 plot(b8,col=cl.2)
 
+#stack mettono tutte insieme le bande della stessa immagine satellitare
+sentinel <- c(b2, b3, b4, b8)
+plot(sentinel)
+plot(sentinel, col=inferno(100))
+
+names(sentinel)
+
+plot(sent$sentinel.dolomites.b8) #$ in R serve per collegare vari pezzi tutti insieme, ma non ci piace
+
+#layer1=b2, layer2=b3, layer3=b4, layer4=b8
+plot(sentinel[[4]])
+plot(sentinel[[2]])
+
+#sist rife
+
 
 
 
