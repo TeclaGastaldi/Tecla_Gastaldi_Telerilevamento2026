@@ -99,14 +99,40 @@ p1+p2
 sentinel<-c(b2, b3, b4, b8)
 
 #3 filtri e 4 bande, esempio usiamo solo le bande del visibile
+im.plotRGB(sentinel, r=3, g=2, b=1)#natural colors
+
+im.plotRGB(sentinel, r=4, g=3, b=2)#false colors
+
+im.multiframe(1,2)
+im.plotRGB(sentinel, r=3, g=2, b=1)#natural colors
+im.plotRGB(sentinel, r=4, g=3, b=2)#false colors
+
+plot(sentinel[[4]])
+im.plotRGB(sentinel, r=4, g=3, b=2)#false colors
+
+#Nir on green
+im.plotRGB(sentinel, r=3, g=4, b=2)
+
+#Excercise: NIR on top of the blue component of the RGB scheme
+im.plotRGB(sentinel, r=3, g=4, b=2)
+
+#Plot the four manners of RGB in a single multiframe
+im.multiframe(2,2)
 im.plotRGB(sentinel, r=3, g=2, b=1)
+im.plotRGB(sentinel, r=4, g=3, b=2)
+im.plotRGB(sentinel, r=3, g=4, b=2)
+im.plotRGB(sentinel, r=3, g=2, b=4)
 
+dev.off()
 
+im.multiframe(1,2)
+im.plotRGB(sentinel, r=4, g=3, b=2)
+im.plotRGB(sentinel, r=4, g=2, b=3)
 
+pairs(sentinel)
 
+#simplifying the function
+im.plotRGB(sentinel, 4, 2, 3)
 
-
-
-
-
-
+#plotRGB from terra
+plotRGB(sentinel, 4, 2, 3, stretch="lin")
