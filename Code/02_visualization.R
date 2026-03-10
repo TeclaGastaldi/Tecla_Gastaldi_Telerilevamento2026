@@ -75,6 +75,35 @@ plot(sentinel[[4]])
 plot(sentinel[[2]])
 
 #sist rife
+library(gggplot)
+?im.ggplot
+
+b2<-im.import("sentinel.dolomites.b2.tif")
+b3<-im.import("sentinel.dolomites.b3.tif")
+b4<-im.import("sentinel.dolomites.b4.tif")
+b8<-im.import("sentinel.dolomites.b8.tif")
+
+p1<-im.ggplot(b8)
+p2<-im.ggplot(b4)
+library(patchwork)
+
+p1+p2
+
+#Multiframe: riassunto
+#1. par(mfrow=c(1,2))
+#2. im.multiframe(1,2)
+#3. stack
+#4. ggplot2 patchwork
+
+#RGB plotting
+sentinel<-c(b2, b3, b4, b8)
+
+#3 filtri e 4 bande, esempio usiamo solo le bande del visibile
+im.plotRGB(sentinel, r=3, g=2, b=1)
+
+
+
+
 
 
 
