@@ -1,0 +1,50 @@
+#code to import data
+
+library(terra)
+library(viridis)
+library(imageRY)
+
+setwd("C:\\Users\\Utente\\Desktop")
+
+getwd()
+
+?rast
+
+gre<- rast("DJI_20260409152942_0001_MS_G.tiff")
+
+plot(gre)
+gre<- flip(gre)
+plot(gre)
+
+plot(gre, col=mako(100))
+
+red<- rast("DJI_20260409152942_0001_MS_R.tiff")
+red<- flip(red)
+plot(red)
+
+#________________________________________________________________________________
+#excercise: import and plot correctly the NIR band
+nir<-rast("DJI_20260409152942_0001_MS_NIR.tiff")
+nir<-flip(nir)
+plot(nir)
+#_______________________________________________________________________________
+#stack
+stack <- c(gre,red,nir)
+plot(stack)
+
+plotRGB(stack, r=3, g=2, b=1, stretch="lin")
+
+im.multiframe(1,2)
+plotRGB(stack, r=3, g=2, b=1, stretch="lin")
+plotRGB(stack, r=3, g=2, b=1, stretch="hist")
+
+
+
+
+
+
+
+
+
+
+
