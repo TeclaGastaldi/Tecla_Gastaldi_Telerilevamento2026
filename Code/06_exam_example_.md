@@ -1,4 +1,7 @@
 # Titolo del mio progetto d'esame
+Ho scelto la Mauritania. Mi piace. Ciao
+
+<img width="1499" height="1000" alt="mauritania" src="https://github.com/user-attachments/assets/5e7f7d88-6329-4485-a143-cf20b5581d2e" />
 
 ## Pacchetti utilizzati
 
