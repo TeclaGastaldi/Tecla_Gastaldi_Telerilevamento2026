@@ -2,6 +2,8 @@
 
 library(terra)
 library(imageRy)
+library(ggplot2)
+library(patchwork)
 
 im.list
 
@@ -73,5 +75,23 @@ tab.out <- data.frame(
 
 tab.out
 
+# Using the ggplot2 package for the final graph: 1992
+ggplot(tab.out, aes(x=class, y=perc1992, color=class)) + #struttura
+geom_bar(stat="identity", fill="white") #istogramma a barre con statistiche da usare e colore delle barre
+
+#2006
+ggplot(tab.out, aes(x=class, y=perc2006, color=class)) + #struttura
+geom_bar(stat="identity", fill="white") #istogramma a barre con statistiche da usare e colore delle barre
+
+#Using patchwork: ora associamo i grafici a due oggetti (p1 e p2) 
+p1 <- ggplot(tab.out, aes(x=class, y=perc1992, color=class)) +
+geom_bar(stat="identity", fill="white") + ylim(c(0,100)) + #limite
+theme(legend.position="none") + #removing legend
+theme_minimal() #al prof non piace non usarlo babba
+
+p2 <- ggplot(tab.out, aes(x=class, y=perc2006, color=class)) + 
+geom_bar(stat="identity", fill="white") + ylim(c(0,100)) + theme_minimal()
+
+p1+p2
 
 
