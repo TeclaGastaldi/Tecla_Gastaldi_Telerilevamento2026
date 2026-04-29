@@ -49,6 +49,11 @@ for (i in 1:10) {
 }
 
 
+#esportare i dati: chiama prima la setwd
+sink("data.txt")
+
+
+
 
 
 
